@@ -1,0 +1,36 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+
+<p>現存ユーザ</p>
+<ul>
+<% @users.each do |user| %>
+<li><%= user.id %>:<%user.name %>(<%= user.status %>)</li>
+<% end %>
+</ul>
+
+<p>削除ユーザ</p>
+<ul>
+<% @deleted_users.each do |user| %>
+<li><%= user.id %>:<%= user.name %>(<%= user.status %>)</li>
+<% end %>
+</ul>
+
+
+<p>最新のコメント</p>
+<ul>
+<% @comments.each do |comment| %>
+<li><%= comment.comment %>(<%= comment.user.name %>さん)</li>
+<% end %></ul>
+
+
+<%= link_to "コメントを書く", "/comments" %> 
+
+<% if user_signed_in? %>
+test login
+<% end %>
+
+
+
+
+
